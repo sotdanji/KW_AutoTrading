@@ -1,6 +1,0 @@
-{
-    "name": "Larry_Williams_Vol_Breakout",
-    "formula": "k = 0.5;\nRange = H(1) - L(1);\nTarget = O + Range * k;\nCondition = H >= Target;",
-    "python_code": "_k = 0.5\n_range = df['high'].shift(1) - df['low'].shift(1)\ntarget_price = df['open'] + _range * _k\ncond = df['high'] >= target_price\ndf['target_price'] = target_price",
-    "saved_at": "2026-02-15 09:00:00"
-}

@@ -1,6 +1,0 @@
-{
-    "name": "전고음봉시가돌파",
-    "formula": "BBU = BBandsUp(20, 2);\nCCU = eavg(C, 20) + ATR(20) * 2;\n\nA1 = (C(2)>BBU(2) || C(1)>BBU(1) || C>BBU);\nA2 = (C(2)>CCU(2) || C(1)>CCU(1) || C>CCU);\nA3 = O(2)<C(2) && O(1)<=C(1) && O>C;\n\nB = (A1 || A2) && A3;\nTargetLine = ValueWhen(1, B, O); // 전고음봉선의 시가 저장\n\nCrossUp(C, TargetLine)\n",
-    "python_code": "BBU = (TI.bbands(df['close'], (20), (2))[0])\nCCU = (TI.ema((df['close']), (20)) + TI.atr(df['high'], df['low'], df['close'], (20)) * 2)\nA1 = ((df['close'].shift(2)>BBU.shift(2)) | (df['close'].shift(1)>BBU.shift(1)) | (df['close']>BBU))\nA2 = ((df['close'].shift(2)>CCU.shift(2)) | (df['close'].shift(1)>CCU.shift(1)) | (df['close']>CCU))\nA3 = (df['open'].shift(2)<df['close'].shift(2)) & (df['open'].shift(1)<=df['close'].shift(1)) & (df['open']>df['close'])\nB = ((A1) | (A2)) & (A3)\nTargetLine = (pd.Series(np.where((B), (df['open']), np.nan), index=df.index).ffill())\ncond = ((((df['close']).shift(1) <= (TargetLine).shift(1)) & ((df['close']) > (TargetLine))))",
-    "saved_at": "2026-01-26 22:24:08"
-}

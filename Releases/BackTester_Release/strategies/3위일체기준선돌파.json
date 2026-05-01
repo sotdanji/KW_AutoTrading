@@ -1,6 +1,0 @@
-{
-    "name": "3위일체기준선돌파",
-    "formula": "선행1=shift((highest(high,5)+lowest(low,5)+highest(high,20)+lowest(low,20))/4,20-1);\n선행2=shift((highest(high,60)+lowest(low,60))/2,20-1);\n이동120 = ma(c,120);\n라인 = Valuewhen(1,Crossup(선행1,선행2) or Crossdown(선행1,선행2),min(L,L(1)));\n\nCrossup(C, 라인) && \nCrossup(C, 이동120) && \nV(1) * 2 <= V && \nC > O",
-    "python_code": "_KVAR_1 = (((((highest(high,5)+lowest(low,5)+highest(high,20)+lowest(low,20))/4)).shift((20-1))))\n_KVAR_2 = (((((highest(high,60)+lowest(low,60))/2)).shift((20-1))))\n_KVAR_0 = ((df['close']).rolling((120)).mean())\n_KVAR_3 = (pd.Series(np.where(((((_KVAR_1).shift(1) <= (_KVAR_2).shift(1)) & ((_KVAR_1) > (_KVAR_2)))  |  (((_KVAR_1).shift(1) >= (_KVAR_2).shift(1)) & ((_KVAR_1) < (_KVAR_2)))), (_MIN((df['low']), (df['low'].shift(1)))), np.nan)).ffill())\ncond = ((((df['close']).shift(1) <= (_KVAR_3).shift(1)) & ((df['close']) > (_KVAR_3)))) & ((((df['close']).shift(1) <= (_KVAR_0).shift(1)) & ((df['close']) > (_KVAR_0)))) & (df['volume'].shift(1) * 2 <= df['volume']) & (df['close'] > df['open'])",
-    "saved_at": "2026-01-26 16:31:15"
-}

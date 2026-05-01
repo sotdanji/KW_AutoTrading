@@ -1,6 +1,0 @@
-{
-    "name": "골든크로스",
-    "formula": "CrossUp(C, Avg(C, 20))",
-    "python_code": "cond = ((df['close'].shift(1) <= df['close'].rolling(20).mean().shift(1)) & (df['close'] > df['close'].rolling(20).mean()))",
-    "saved_at": "2026-01-26 10:01:05"
-}
