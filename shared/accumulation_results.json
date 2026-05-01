@@ -1,0 +1,138 @@
+{
+    "updated_at": "2026-03-18 22:42:22",
+    "total_count": 11,
+    "stocks": [
+        {
+            "code": "278470",
+            "name": "에이피알",
+            "score": 97.5,
+            "price_change": 34.07,
+            "top_broker": "골드만삭스",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 294012.29936216166
+        },
+        {
+            "code": "000250",
+            "name": "삼천당제약",
+            "score": 97.0,
+            "price_change": 63.16,
+            "top_broker": "메리츠",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 625463.8485915042
+        },
+        {
+            "code": "083650",
+            "name": "비에이치아이",
+            "score": 97.0,
+            "price_change": 47.08,
+            "top_broker": "메리츠",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 87809.7137331108
+        },
+        {
+            "code": "068270",
+            "name": "셀트리온",
+            "score": 95.0,
+            "price_change": -0.24,
+            "top_broker": "모건스탠리",
+            "is_breakout": false,
+            "is_below_avg": true,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 223923.15987734724
+        },
+        {
+            "code": "226950",
+            "name": "올릭스",
+            "score": 95.0,
+            "price_change": 37.78,
+            "top_broker": "모건스탠리",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": true,
+            "is_volume_dry": false,
+            "avg_buy_price": 164708.35508136713
+        },
+        {
+            "code": "066570",
+            "name": "LG전자",
+            "score": 90.9,
+            "price_change": 21.09,
+            "top_broker": "H S B C",
+            "is_breakout": true,
+            "is_below_avg": true,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 121185.08995630976
+        },
+        {
+            "code": "009830",
+            "name": "한화솔루션",
+            "score": 89.1,
+            "price_change": 83.73,
+            "top_broker": "모건스탠리",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 45791.87213503147
+        },
+        {
+            "code": "078600",
+            "name": "대주전자재료",
+            "score": 87.2,
+            "price_change": 56.33,
+            "top_broker": "메리츠",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 97144.1496672012
+        },
+        {
+            "code": "042700",
+            "name": "한미반도체",
+            "score": 83.6,
+            "price_change": 47.39,
+            "top_broker": "메리츠",
+            "is_breakout": true,
+            "is_below_avg": false,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 257372.15772897718
+        },
+        {
+            "code": "006400",
+            "name": "삼성SDI",
+            "score": 76.7,
+            "price_change": 3.85,
+            "top_broker": "골드만삭스",
+            "is_breakout": false,
+            "is_below_avg": true,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 407177.72419646836
+        },
+        {
+            "code": "055550",
+            "name": "신한지주",
+            "score": 71.8,
+            "price_change": 12.69,
+            "top_broker": "유비에스증권",
+            "is_breakout": false,
+            "is_below_avg": true,
+            "is_yin_dual_buy": false,
+            "is_volume_dry": false,
+            "avg_buy_price": 94544.18953734323
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.agent/
+
+# === API Keys / Secrets ===
+# 각 파일에 앱키, 시크릿, 텔레그램 토큰이 포함되어 있음
+# 아래 파일들은 절대 커밋하지 말 것!
+.env
+shared/config.py
+AT_Sig/config.py
+Analyzer_Sig/config.py
+Lead_Sig/config.py
+BackTester/core/config.py
+
+# === Settings (개인 설정) ===
+AT_Sig/settings.json
+BackTester/settings.json
+
+# === Runtime Files ===
+*.log
+AT_Sig/lead_watchlist.json
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/logs/
+
+# === IDE / OS ===
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store
+
+# === Backups ===
+**/backup_*/

@@ -1,0 +1,7 @@
+{
+    "name": "VWAP&TRIX",
+    "formula": "Period = 12;\nSigPeriod =5;\n\n// 1. VWAP 계산식\nA = Sum((H+L+C)/3 * V);\nB = Sum(V);\nD_VWAP = (A - ValueWhen(1, Date(1) != Date, A(1))) / (B - ValueWhen(1, Date(1) != Date, B(1)));\n\n// 2. TRIX 계산식 (12, 5 기준)\nT = TRIX(Period);\nS = avg(T, SigPeriod);\n\n// 3. 필터 조건 : 주가가 VWAP 위(C > D_VWAP)이면서 TRIX가 골든크로스날 때\nC > D_VWAP && CrossUp(T, S)\n",
+    "python_code": "Period = 12\nSigPeriod = 5\nA = (_sum(df['close'], (df['high']+df['low']+df['close'])/3 * df['volume']))\nB = (_sum(df['close'], df['volume']))\nD_VWAP = ((A - pd.Series(np.where(Date.shift(1) != Date, A.shift(1), np.nan), index=df.index).ffill()) / (B - pd.Series(np.where(Date.shift(1) != Date, B.shift(1), np.nan), index=df.index).ffill()))\nT = (TI.trix(df['close'], Period))\nS = (_ma(T, SigPeriod))\ncond = (df['close'] > D_VWAP) & (((T.shift(1) <= S.shift(1)) & (T > S)))",
+    "updated_at": "2026-03-15 18:26:44",
+    "data_type": "minute"
+}

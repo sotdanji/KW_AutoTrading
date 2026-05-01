@@ -1,0 +1,6 @@
+{
+    "name": "3기준선돌파",
+    "formula": "기간 = 20;\n기간1 = 40;\n기간2 = 60;\n수렴 = 1.02;\n\nA = (highest(high, 기간) + lowest(low, 기간)) / 2;\nA1 = (highest(high, 기간1) + lowest(low, 기간1)) / 2;\nA2 = (highest(high, 기간2) + lowest(low, 기간2)) / 2;\n\nB = MAX(A, A1, A2);\nB1 = MIN(A, A1, A2);\n\nB1 * 수렴 > B && O < B1 && C > B && (A > A(1) || A1 > A1(1) || A2 > A2(1))\n",
+    "python_code": "_KVAR_3 = (20)\n_KVAR_1 = (40)\n_KVAR_0 = (60)\n_KVAR_2 = (1.02)\nA = ((highest(high, _KVAR_3) + lowest(low, _KVAR_3)) / 2)\nA1 = ((highest(high, _KVAR_1) + lowest(low, _KVAR_1)) / 2)\nA2 = ((highest(high, _KVAR_0) + lowest(low, _KVAR_0)) / 2)\nB = (MAX(A, A1, A2))\nB1 = (MIN(A, A1, A2))\ncond = (B1 * _KVAR_2 > B) & (df['open'] < B1) & (df['close'] > B) & ((A > A.shift(1)) | (A1 > A1.shift(1)) | (A2 > A2.shift(1)))",
+    "saved_at": "2026-01-26 16:01:00"
+}

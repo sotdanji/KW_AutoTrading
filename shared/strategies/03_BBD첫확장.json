@@ -1,0 +1,6 @@
+{
+    "name": "03_BBD첫확장",
+    "formula": "BD1 = BBandsDown(20,2);\nBU2 = BBandsUp(60,2);\nBD2 = BBandsDown(60,2);\n// 어제의 상단밴드값에 0.2%(임계점)를 더해 오늘의 논리적 목표가로 설정\nTargetLine = BU2(1) * 1.002;\n\nH>BU2 && BD1(2)<=BD1(1) && BD1(1)>BD1 && BD2(2)<=BD2(1) && BD2(1)>BD2;",
+    "python_code": "TP=(df['high']+df['low']+df['close'])/3; BU1=(TI.bbands(TP,20,2)[0]); BD1=(TI.bbands(TP,20,2)[2]); BU2=(TI.bbands(TP,60,2)[0]); BD2=(TI.bbands(TP,60,2)[2]); TargetLine = BU2.shift(1) * 1.002; cond=(df['high']>BU2) & (BD1.shift(2)<=BD1.shift(1)) & (BD1.shift(1)>BD1) & (BD2.shift(2)<=BD2.shift(1)) & (BD2.shift(1)>BD2); score=100",
+    "updated_at": "2026-04-01 18:13:16"
+}

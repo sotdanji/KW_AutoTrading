@@ -1,0 +1,7 @@
+{
+    "name": "BB스퀴즈탈출",
+    "formula": "period = 20;\nmult_bb = 2.0;\nmult_kc = 1.5;\n\n// 1. 볼린저 밴드 상단/하단\nbb_up = BBandsUp(period, mult_bb);\nbb_low = BBandsDown(period, mult_bb);\n\n// 2. 켈트너 채널 상단/하단 (ATR 기반)\nkc_up = eavg(C, period) + ATR(period) * mult_kc;\nkc_low = eavg(C, period) - ATR(period) * mult_kc;\n\n// 3. 스퀴즈 조건: 볼린저 밴드가 켈트너 채널 안으로 압축됨\nis_sq = (bb_up < kc_up) && (bb_low > kc_low);\n\n// 4. 최종 신호: 어제까지 스퀴즈였고, 오늘 스퀴즈를 상향 탈출하며 종가가 볼밴 상단 돌파\nis_sq(1) && (bb_up > kc_up) && CrossUp(C, bb_up)",
+    "python_code": "period = 20\nmult_bb = 2.0\nmult_kc = 1.5\nbb_up = BBandsUp(period, mult_bb)\nbb_low = BBandsDown(period, mult_bb)\nkc_up = EMA(C, period) + ATR(period) * mult_kc\nkc_low = EMA(C, period) - ATR(period) * mult_kc\nis_sq = (bb_up < kc_up) & (bb_low > kc_low)\ncond = (is_sq.shift(1)) & (bb_up > kc_up) & ((C.shift(1) <= bb_up.shift(1)) & (C > bb_up))",
+    "saved_at": "2026-04-23 17:05:00",
+    "min_bars": 70
+}

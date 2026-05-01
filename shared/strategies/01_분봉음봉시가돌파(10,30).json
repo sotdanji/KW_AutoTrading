@@ -1,0 +1,7 @@
+{
+    "name": "01_분봉음봉시가돌파(10,30)",
+    "formula": "// [시간 기반 고도화 버전]\nIsGapUp = DayOpen() >= PreDayClose();\n\n// 9시 10분/30분 기점을 시간으로 포착\nMark10 = (Time >= 091000) and (Time(1) < 091000);\nMark30 = (Time >= 093000) and (Time(1) < 093000);\n\n// 음봉 상태 확정\nIs10MinNeg = ValueWhen(1, Mark10, DayOpen() > C);\nIs30MinNeg = ValueWhen(1, Mark30, DayOpen() > C);\n\n// 시가 상향 돌파 시 매수\nCond10 = IsGapUp and Is10MinNeg and (Time >= 091000) and CrossUp(C, DayOpen());\nCond30 = IsGapUp and Is30MinNeg and (Time >= 093000) and CrossUp(C, DayOpen());\n\nCond10 or Cond30\n",
+    "python_code": "IsGapUp = (DayOpen() >= PreDayClose())\n\nMark10 = (time >= 91000) & (time.shift(1) < 91000)\nMark30 = (time >= 93000) & (time.shift(1) < 93000)\n\n# 09:10/30 시점에 완성된 봉이 음봉인지 확정 (ValueWhen 1, Mark, DayOpen > C)\nIs10MinNeg = pd.Series(np.where(Mark10, DayOpen() > df['close'], np.nan), index=df.index).ffill()\nIs30MinNeg = pd.Series(np.where(Mark30, DayOpen() > df['close'], np.nan), index=df.index).ffill()\n\n# 음봉 확정 상태(True)에서 현재가(C)가 시가(DayOpen)를 돌파할 때 포착\nCond10 = IsGapUp & (Is10MinNeg == 1.0) & (time >= 91000) & (df['close'].shift(1) <= DayOpen()) & (df['close'] > DayOpen())\nCond30 = IsGapUp & (Is30MinNeg == 1.0) & (time >= 93000) & (df['close'].shift(1) <= DayOpen()) & (df['close'] > DayOpen())\n\ncond = Cond10 | Cond30",
+    "updated_at": "2026-03-27 16:00:26",
+    "data_type": "minute"
+}
