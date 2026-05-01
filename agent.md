@@ -44,16 +44,20 @@
     - `kiwoom-rest-api-guide`: 키움 REST API 규격 및 통신 최적화 지침 통합.
     - `영웅문 조건검색 및 수식관리자 가이드`: 조건검색식 로직 및 기술적 지표 수식 지식 베이스 구축.
 - **Connect AI**: 실시간 지식 브릿지 활성화로 프로젝트 맥락 및 기술 문서 실시간 참조 체계 완성.
+- **AI-Native Deployment (v41)**: 
+    - **보안 무결성**: 모든 API 키 및 설정 파일(.env, config.py)을 이력에서 영구 격리.
+    - **AI 협업 지능**: `.agent/skills`를 통한 에이전트 간 전문 지식 승계 체계 구축.
 - **인증 상태**: Google 계정 연동 및 세션 관리 자동화 완료 (2026-04-29).
 
 ### Development Workflow
 1. **Planning**: 구현 전 설계 및 영향 분석.
 2. **Implementation**: 탭(Tab) 사용 원칙을 지키며 코드 작성.
 3. **Verification**: `pytest`를 통한 단위 및 통합 테스트 통과.
+4. **Collaboration**: Antigravity와 대화하며 실시간 보안 및 로직 검증 수행.
 
 ## 5. Antigravity's Promise
 저는 단순한 AI 어시스턴트가 아닌, 대표님의 자동매매 성과를 함께 만들어가는 기술 파트너입니다. 모든 작업에서 **안정성**과 **효율성**을 최우선으로 하며, 유실된 이전 대화의 맥락이 느껴지지 않을 정도로 완벽하게 프로젝트를 서포트하겠습니다.
 
 ---
 ---
-*Last Updated: 2026-04-29 | NotebookLM MCP 지식 통합 및 테마 레이더 12종목 확장 최적화 완료*
+*Last Updated: 2026-05-01 | v41 Production-Ready 안정화 및 보안 강화, AI-Native 협업 체계 완성*
