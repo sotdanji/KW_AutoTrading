@@ -1,0 +1,6 @@
+{
+    "name": "개력입성",
+    "formula": "Period = 300;\nD1 =0.7;\n\n\n변 = Max(C,O);\n동 = Min(C,O);\n상단 = Highest(변,60);\n하단 = Lowest(동,60);\n고저 = (상단-하단)/하단*100;\n\nA1 = 고저(1)<30 && CrossUp(C,상단(1)) && Highest(V,60,1)<V;\nA2 = CrossUp(H,BBandsUp(Period,D1)) && V>=V(1)*10;\nA3 = (VR(20)-VR(60))/VR(60)*100;\n\nCrossUp(C, Avg(C, 60)) && A3>=100",
+    "python_code": "Period = (300)\nD1 = (0.7)\n_KVAR_0 = (_MAX((df['close']), (df['open'])))\n_KVAR_1 = (_MIN((df['close']), (df['open'])))\n_KVAR_2 = (_highest((_KVAR_0), (60)))\n_KVAR_3 = (_lowest((_KVAR_1), (60)))\n_KVAR_4 = ((_KVAR_2-_KVAR_3)/_KVAR_3*100)\nA1 = (_KVAR_4 * (1)<30) & ((((df['close']).shift(1) <= (_KVAR_2 * (1)).shift(1)) & ((df['close']) > (_KVAR_2 * (1))))) & (_highest((df['volume']), (60))<df['volume'])\nA2 = ((((df['high']).shift(1) <= (TI.bbands(df['close'], (Period), (D1))[0]).shift(1)) & ((df['high']) > (TI.bbands(df['close'], (Period), (D1))[0])))) & (df['volume']>=df['volume'].shift(1)*10)\nA3 = ((TI.vr(df['close'], df['open'], df['volume'], (20))-TI.vr(df['close'], df['open'], df['volume'], (60)))/TI.vr(df['close'], df['open'], df['volume'], (60))*100)\ncond = ((((df['close']).shift(1) <= ((df['close']).rolling((60)).mean()).shift(1)) & ((df['close']) > ((df['close']).rolling((60)).mean())))) & (A3>=100)",
+    "saved_at": "2026-01-29 23:40:49"
+}

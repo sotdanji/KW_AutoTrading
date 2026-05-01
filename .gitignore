@@ -4,7 +4,7 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-.agent/
+# .agent/ (Skills included)
 
 # === API Keys / Secrets ===
 # ê°??Œì¼???±í‚¤, ?œí¬ë¦? ?”ë ˆê·¸ë¨ ? í°???¬í•¨?˜ì–´ ?ˆìŒ
@@ -37,3 +37,8 @@ Thumbs.db
 
 # === Backups ===
 **/backup_*/
+
+brain/
+scratch/
+.agent/logs/
+.agent/sessions/
